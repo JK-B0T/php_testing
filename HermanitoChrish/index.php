@@ -24,6 +24,11 @@
                 <button type="submit">Submit</button>
             </li>
         </ul>
+        <?php
+        if (isset($_GET['error']) && $_GET['error'] == 'user_exists') {
+            echo "<p style='color: red;'>El nombre de usuario ya existe</p>";
+        }
+        ?>
     </form>
     <a href="./paginas/login.html">¿Ya se registro? Haga click aquí</a>
 </body>

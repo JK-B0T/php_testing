@@ -10,14 +10,25 @@
         $email = $_POST["email"];
         $contrasenya = $_POST["contrasenya"];
     
-        $sql = "INSERT INTO usuario (nombre, email, contrasenya) VALUES ('$nombre', '$email', '$contrasenya')";
+        $sql1 = "SELECT * FROM usuario WHERE nombre = ?";
+        $stmt = $conexion->prepare($sql1);
+        $stmt->bind_param("s", $nombre);
+        $stmt->execute();
+        $result =  $stmt->get_result();
 
-        if ($conexion->query($sql) === TRUE) {
-            echo "Usuario registrado con éxito";
-            echo "<br><a href='../index.html'>Volver a inicio</a>";
+        if ($result->num_rows > 0) {
+            header("Location: ../index.php?error=user_exists");
         } else {
-            echo "Error" . $conexion->error;
+            $sql2 = "INSERT INTO usuario (nombre, email, contrasenya) VALUES ('$nombre', '$email', '$contrasenya')";
+
+            if ($conexion->query($sql2) === TRUE) {
+                echo "Usuario registrado con éxito";
+                echo "<br><a href='../index.php'>Volver a inicio</a>";
+            } else {
+                echo "Error" . $conexion->error;
+            }
         }
     }
+    $stmt->close();
     $conexion->close();
 ?>
