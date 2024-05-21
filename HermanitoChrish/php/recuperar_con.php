@@ -19,7 +19,7 @@
             header("Location: http://localhost/pages/HermanitoChrish/index.php");
         } else {
             echo "Contraseña o usuario introducidos de forma incorrecta";
-            echo "<br><a href='../index.php'>Click aquí para vovler a intentarlo</a>";
+            echo "<br><a href='index.php'>Click aquí para vovler a intentarlo</a>";
         }
     }
     $conexion->close();

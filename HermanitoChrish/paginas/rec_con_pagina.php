@@ -6,15 +6,11 @@
     <title>Form</title>
 </head>
 <body>
-    <form action="./php/registrar_usuario.php" method="POST">
+    <form action="../php/recuperar_con.php" method="POST">
         <ul>
             <li>
                 <label for="user_name">Nombre</label>
                 <input type="text" id="user_name" name="nombre">            
-            </li>
-            <li>
-                <label for="user_email">Correo</label>
-                <input type="email" id="user_email" name="email">
             </li>
             <li>
                 <label for="user_pass">Contraseña</label>
@@ -24,12 +20,7 @@
                 <button type="submit">Submit</button>
             </li>
         </ul>
-        <?php
-        if (isset($_GET['error']) && $_GET['error'] == 'user_exists') {
-            echo "<p style='color: red;'>El nombre de usuario ya existe</p>";
-        }
-        ?>
     </form>
-    <a href="./paginas/login.php">¿Ya se registro? Haga click aquí</a>
+    <a href="../index.php">¿No se ha registrado aún? Haga click aquí</a>
 </body>
 </html>
