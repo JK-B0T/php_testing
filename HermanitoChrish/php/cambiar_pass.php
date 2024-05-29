@@ -1,10 +1,10 @@
 <?php
-use phpMailer\PHPMailer;
+use phpMailer\PHPMailer\PHPMailer;
 use phpMailer\Exception;
 use phpMailer\SMTP;
-require 'phpMailer/Exception.php';
-require 'phpMailer/PHPMailer.php';
-require 'phpMailer/SMTP.php';
+require './phpMailer/Exception.php';
+require './phpMailer/PHPMailer.php';
+require './phpMailer/SMTP.php';
 
 /*function debug_to_console($data) {
     $output = $data;
@@ -19,10 +19,8 @@ require 'phpMailer/SMTP.php';
     if ($conn->connect_error) {
         die("Error de la conexión: " . $conn->conect_error);
     }
-    //debug_to_console("funciona");
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $email = $POST['email'];
-        //debug_to_console($email);
+        $email = $_POST['email'];
         $sql = "SELECT * FROM usuario WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
