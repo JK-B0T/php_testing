@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    $conexion = new mysqli("localhost", "root", "", "hermanito_en_cristo");
+    $conexion = new mysqli("localhost", "root", "", "test");
 
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
@@ -9,9 +9,9 @@
     
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre = $_POST["nombre"];
-        $contrasenya = $_POST["contrasenya"];
+        $pass = $_POST["pass"];
     
-        $sqlLogin = "SELECT id FROM usuario WHERE nombre = '$nombre' AND contrasenya = '$contrasenya'";
+        $sqlLogin = "SELECT id FROM usuario WHERE nombre = '$nombre' AND pass = '$pass'";
 
         if ($conexion->query($sqlLogin)->num_rows == 1) {
             $_SESSION['nombre'] = $nombre;

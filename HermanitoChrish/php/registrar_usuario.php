@@ -1,5 +1,5 @@
 <?php
-    $conexion = new mysqli("localhost", "root", "", "hermanito_en_cristo");
+    $conexion = new mysqli("localhost", "root", "", "test");
 
     if ($conexion->connect_error) {
         die("Error de conexión: " . $conexion->connect_error);
@@ -8,7 +8,7 @@
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nombre = $_POST["nombre"];
         $email = $_POST["email"];
-        $contrasenya = $_POST["contrasenya"];
+        $pass = $_POST["pass"];
     
         $sql1 = "SELECT * FROM usuario WHERE nombre = ?";
         $stmt = $conexion->prepare($sql1);
@@ -19,11 +19,11 @@
         if ($result->num_rows > 0) {
             header("Location: ../index.php?error=user_exists");
         } else {
-            $sql2 = "INSERT INTO usuario (nombre, email, contrasenya) VALUES ('$nombre', '$email', '$contrasenya')";
+            $sql2 = "INSERT INTO usuario (nombre, email, pass) VALUES ('$nombre', '$email', '$pass')";
 
             if ($conexion->query($sql2) === TRUE) {
                 echo "Usuario registrado con éxito";
-                echo "<br><a href='../index.php'>Volver a inicio</a>";
+                echo "<br><a href='../paginas/login.php'>Volver a inicio</a>";
             } else {
                 echo "Error" . $conexion->error;
             }

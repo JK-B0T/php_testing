@@ -18,7 +18,7 @@
             </li>
             <li>
                 <label for="user_pass">Contraseña</label>
-                <input type="password" id="user_pass" name="contrasenya">
+                <input type="password" id="user_pass" name="pass">
             </li>
             <li>
                 <button type="submit">Submit</button>
