@@ -25,6 +25,7 @@
         }
         echo "</table>";
         echo "<a href='../paginas/informe.php'>Volver a selección de informes</a>";
+        echo "<br><a href='../index.php'>Volver a inicio</a>";
     } else {
         echo "No se encontraron resultados";
     }

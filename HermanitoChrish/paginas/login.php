@@ -22,5 +22,26 @@
         </ul>
     </form>
     <a href="../index.php">¿No se ha registrado aún? Haga click aquí</a>
+    <br>
+    <a href="../paginas/enviar_mail.php">¿Se le olvido la contraseña? Haga click aquí</a>
+    <?php
+    if (isset($_GET['message'])) {
+
+        switch($_GET['message']){
+            case 'OK':
+                echo '<h2>Por favor reisa tu correo</h2>';
+                break;
+            case 'success_password':
+                echo '<h2>Inicia sesion con tu nueva contraseña</h2>';
+                break;
+            case 'usuario_no_encontrado':
+                echo '<h2>Usuario no encontrado</h2>';
+                break;
+            default:
+                echo '<h2>Algo salio mal, intentalo de nuevo</h2>';
+                break;
+        }
+    }
+    ?>
 </body>
 </html>
