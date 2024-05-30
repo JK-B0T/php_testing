@@ -29,7 +29,7 @@
 
         switch($_GET['message']){
             case 'OK':
-                echo '<h2>Por favor reisa tu correo</h2>';
+                echo '<h2>Por favor revisa tu correo</h2>';
                 break;
             case 'success_password':
                 echo '<h2>Inicia sesion con tu nueva contraseña</h2>';

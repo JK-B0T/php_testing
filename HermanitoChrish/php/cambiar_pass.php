@@ -1,10 +1,10 @@
 <?php
-use phpMailer\PHPMailer\PHPMailer;
-use phpMailer\Exception;
-use phpMailer\SMTP;
-require './phpMailer/Exception.php';
-require './phpMailer/PHPMailer.php';
-require './phpMailer/SMTP.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+require './PHPMailer/Exception.php';
+require './PHPMailer/PHPMailer.php';
+require './PHPMailer/SMTP.php';
 
 /*function debug_to_console($data) {
     $output = $data;
@@ -33,19 +33,19 @@ require './phpMailer/SMTP.php';
 
             try {
                 $mail->isSMTP();
-                $mail->Host       = 'smtp.gmail.com';
+                $mail->Host       = 'smtp-mail.outlook.com';
                 $mail->SMTPAuth   = true;
-                $mail->Username   = 'popypxp@gmail.com';
-                $mail->Password   = 'pxplove333';
+                $mail->Username   = 'yeipis@outlook.es';
+                $mail->Password   = 'JuanPablo333';
                 $mail->Port       = 587;
             
-                $mail->setFrom('popypxp@gmail.com', 'pop');
+                $mail->setFrom('yeipis@outlook.es', 'Yeipis');
                 $mail->addAddress($email, 'test');
 
                 $mail->isHTML(true);
                 $mail->Subject = 'recuperacion de contraseña';
                 $mail->Body    = 'Hola este es un correo para la recuperacion de tu contraseña, por favor ingresa 
-                a este enlace: <a href="localhost/pagina/cambio_pass.php?id='.$row['id'].'">Recuperar contraseña</a>';
+                a este enlace: <a href="http://localhost/pages/HermanitoChrish/paginas/cambio_pass.php?id='.$row['id'].'">Recuperar contraseña</a>';
                 $mail->AltBody = 'Bro que haces que tu mail no acepta HMTL';
             
                 $mail->send();

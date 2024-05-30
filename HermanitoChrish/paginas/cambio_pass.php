@@ -8,9 +8,9 @@
 <body>
     <h2>Cambio de contraseña</h2>
     <form action="../php/recuperar_pass.php" method="POST">
-        <input type="hidden" id="id" name="id" value="<?php echo $GET['id'];?>">
-        <label for="nuevopass">Contraseña</label>
-        <input type="password" id="nuevopass" name="pass">
+        <input type="hidden" id="id" name="id" value="<?php echo $_GET['id'];?>">
+        <label for="newPass">Contraseña</label>
+        <input type="password" id="newPass" name="newPass">
         <button type="submit">Submit</button>
     <form>
 </body>
